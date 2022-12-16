@@ -17,7 +17,7 @@ public static class GreedyMethod
 		while (unusedItems.Count > 0 && solutionWeight < capacity)
 		{
 			Console.Write($"> Итерация №{items.Count - unusedItems.Count + 1} | ");
-			Console.WriteLine($"Текущий набор: [{string.Join(" ", solution)}]");
+			Console.WriteLine($"Текущий набор: [{string.Join(" ", ToIntList(solution))}]");
 			Console.WriteLine($"{new string(' ', 14)}| Вес/вместимость: {solutionWeight}/{capacity}");
 
 			var (idx, mostValuable) = FindMostValuableItem(unusedItems);
@@ -56,4 +56,7 @@ public static class GreedyMethod
 
 		return (mostValuableIdx, mostValuable);
 	}
+
+	public static IEnumerable<int> ToIntList(IEnumerable<bool> list) =>
+		list.Select(t => t ? 1 : 0);
 }

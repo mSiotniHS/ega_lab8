@@ -13,5 +13,5 @@ public readonly struct Item
 
 	public double SpecificValue => Value / (double)Weight;
 
-	public override string ToString() => $"(Value: {Value}, Weight: {Weight})";
+	public override string ToString() => $"(Value: {Value}, Weight: {Weight}, Specific Value: {SpecificValue})";
 }
